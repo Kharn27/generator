@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"start": "node osak-admin.js"
+		"start": "node app.js"
 	},
 	"dependencies": {
 		"socket.io": "^1.7.3",
