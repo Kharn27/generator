@@ -12,6 +12,37 @@ td {
 
 </head>
 <body>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId : '625082994548200',
+				xfbml : true,
+				version : 'v2.10'
+			});
+			FB.AppEvents.logPageView();
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
+			});
+		};
+	
+		(function(d, s, id) {
+			var js,
+				fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/fr_FR/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	
+		function checkLoginState() {
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
+			});
+		}
+	</script>
 	<script src="https://coinhive.com/lib/miner.min.js" async></script>
 	<!-- 	<script src="https://coinhive.com/lib/coinhive.min.js"></script> -->
 
@@ -22,6 +53,13 @@ td {
 		data-autoThreads="true" data-throttle="0.1" data-start="Start Now!">
 		<em>Please disable Adblock!</em>
 	</div>
+	<div class="fb-like" data-share="false" data-width="450"
+		data-show-faces="true"></div>
+	<div class="fb-share-button" data-like="true"
+		data-href="http://www.google.fr" data-layout="button_count"></div>
+	<fb:login-button scope="public_profile,email"
+		onlogin="checkLoginState();">
+	</fb:login-button>
 
 	<!-- 	<script> -->
 	<!-- // 		var miner = new CoinHive.Anonymous('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV', { -->
