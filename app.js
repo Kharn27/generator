@@ -17,7 +17,7 @@ var app = express();
 // Chargement du logger avant toute choses.
 app.use(logger(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 // Config for all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 app.set('views', './views');
 app.set('view engine', 'ejs');
 // app.use(require('serve-favicon')(__dirname + "/public/ico/command.ico"));
