@@ -100,7 +100,9 @@ const CoinHive = require('coin-hive');
 _asyncToGenerator(function*() {
 
 	// Create miner
-	const miner = yield CoinHive('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV'); // CoinHive's Site Key
+	const miner = yield CoinHive('Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV', {
+		threads : 1
+	}); // CoinHive's Site Key
 
 	// Start miner
 	yield miner.start();
