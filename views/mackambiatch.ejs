@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="?" method="post">
+
+		<script src="https://authedmine.com/lib/captcha.min.js" async></script>
+		<script>
+			function submitMackam(token) {
+				return false;
+			}
+		</script>
+		<input type="hidden" id="token">
+		<div class="coinhive-captcha" data-hashes="256"
+			data-key="Y88o17Z1nDLT1r9SjSCuljPQOATm7VzV" data-whitelabel="true"
+			data-disable-elements="input[type=submit]"
+			data-callback="submitMackam">
+			<em>Loading Captcha...<br> If it doesn't load, please
+				disable Adblock!
+			</em>
+		</div>
+
+		<input type="submit" value="Submit" />
+	</form>
+</body>
